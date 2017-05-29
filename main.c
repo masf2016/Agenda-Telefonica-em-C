@@ -241,7 +241,7 @@ void pesquisar(T_agenda *a, int codigo){  // parei aqui 29/05/17 01:07
 void Listar(T_agenda *a){
 int i = 0, retorno;
 
-    if ((fp = fopen("agenda.db", "r")) == NULL)
+    if ((fp = fopen("agenda.db", "r")) == NULL) 			// abre o  arquivo em modo de leitura
     {
     printf ("O arquivo da lista não pode ser aberto!\n");
     printf ("Insira dados!\n");
@@ -249,8 +249,8 @@ int i = 0, retorno;
     exit(1);
     }
 
-    retorno = fread(&Tab[i], sizeof(struct Agenda), 1, fp);
-   // fread retorna a quantidade de itens ...
+    retorno = fread(&Tab[i], sizeof(struct Agenda), 1, fp); // fread retorna a quantidade de itens ...
+   
 
    while ( retorno == 1) {
       printf("\n Nome ..: %s",   Tab[i].nome);
