@@ -17,9 +17,6 @@ typedef struct Agenda
 // prototipos
 void incluir(T_agenda *a);
 void Listar(T_agenda *a);
-void quick_struct(int);
-void qs_struct(int,int);
-void ordenar(void);
 void pesquisar(T_agenda *a);
 char Validaresp();
 

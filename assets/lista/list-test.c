@@ -64,6 +64,10 @@
 		scanf("%d", &dch);
 		return dch;
 	}
+	
+	//##################################################
+	//##################################################
+	
 	void incluir()
 	{
 		contato *dptr,*dprev;
@@ -98,7 +102,7 @@
 		if(inicio==NULL)
 		{
 			inicio=temporario;
-		} else {
+		} 
 			
 	 	dprev=dptr=inicio;
 	 	while((temporario->codigo) > (dptr->codigo)){
@@ -116,11 +120,19 @@
 				temporario->proximo=dptr;
 				dprev->proximo=temporario;
 			}
-		}
+
 		retorno = fwrite (&temporario, sizeof(struct agenda) ,1,fp);
 		fclose (fp);
 		
+		    if (retorno == 1) {
+               printf(" \nGravacao ok ! ");
+           }
+			 getch();
 	}
+	
+	//##################################################
+	//##################################################
+		
 	void consultar()
 	 {
 		contato *dptr;
@@ -166,11 +178,19 @@
 		else {
 			printf("Nenhum registro encontrado .......\n");
 		}
+		
+		   if (retorno == 1) {
+               printf(" \nGravacao ok ! ");
+           }
 		fclose(fp);
 	 getch();
 	       
 	 
 	}
+	
+	//##################################################
+	//##################################################
+	
 	void alterar()
 	{
 		contato *dptr;
@@ -238,6 +258,9 @@
 	 
 	 
 	}
+	
+	//##################################################
+	//##################################################	
 	void excluir()
 	 {
 		contato *dptr,*dprev,*temporario;
@@ -300,6 +323,9 @@
 			fclose(fp);
 		 getch();
 	}
+	
+	//##################################################
+	//##################################################	
 	void listar()
 	{
 		int retorno;
@@ -321,7 +347,7 @@
 		}
 		
 		retorno = fread(&dptr, sizeof(struct agenda), 1, fp); // retorna o número de unidades no arquivo efetivamente lidas
-	//	clrscr();
+
 		system("cls");
 		printf("\t\t------------------------------\n");
 		for(dptr=inicio; dptr!=NULL; dptr=dptr->proximo) {
@@ -332,9 +358,15 @@
 			printf("\n\t\tTelefone : %s\n",dptr->telefone);
 			printf("\n\t\t------------------------------\n");
 	 }
+	 
 	 fclose(fp);
 	 getch();
 	}
+	
+	
+	//##################################################
+	//##################################################
+	
 	void main()
 	{
 		int dch;
